@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.UUID;
+
 /**
  * Created by Administrator on 2017-05-30.
  */
@@ -18,6 +20,7 @@ public class WordPressArticlePage extends PageObject {
     private final By Email = By.id("email");
     private final By Name = By.id("author");
     private final By SendPost = By.id("comment-submit");
+    private final String author = UUID.randomUUID().toString();
 
     public WordPressArticlePage(WebDriver drv) {
         super(drv);
@@ -34,7 +37,7 @@ public class WordPressArticlePage extends PageObject {
         );
     }
         //kliknac na L a R
-    public void clickOnLeaveAReply() {
+    public void clickOnLeaveAReply() throws InterruptedException {
         WebElement element = driver.findElement(LeaveAReply);
 
         element.click();
@@ -51,7 +54,7 @@ public class WordPressArticlePage extends PageObject {
         );
         // sendKeys 1 2 3
         WebElement leaveAReply = driver.findElement(LeaveAReply);
-        leaveAReply.sendKeys("Michal Test");
+        leaveAReply.sendKeys(author);
         leaveAReply.sendKeys(Keys.TAB);
 
         WebElement email = driver.findElement(Email);
@@ -61,6 +64,7 @@ public class WordPressArticlePage extends PageObject {
         WebElement name = driver.findElement(Name);
         name.sendKeys("Michal");
         name.sendKeys(Keys.TAB);
+        Thread.sleep(5000);
         // kliknac send post
 
         WebElement elementS = driver.findElement(SendPost);

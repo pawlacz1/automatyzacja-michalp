@@ -1,0 +1,13 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch selenium1
+# Your branch is up-to-date with 'origin/selenium1'.
+#
+# Changes to be committed:
+#	new file:   src/test/java/autotestJava/PageObject.java
+#	new file:   src/test/java/autotestJava/TestBase.java
+#	new file:   src/test/java/autotestJava/WordPressArticlePage.java
+#	new file:   src/test/java/autotestJava/WordPressHomePage.java
+#	new file:   src/test/java/autotestJava/WordPressTest.java
+#
